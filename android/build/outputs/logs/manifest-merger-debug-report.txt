@@ -1,0 +1,165 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:1-118:12
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:1-118:12
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:1-118:12
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:1-118:12
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:1-118:12
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:1-118:12
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:1-118:12
+	package
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:3:5-30
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:1-118:12
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:2:5-51
+	android:versionCode
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:1-118:12
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:5:22-75
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:8:5-76
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:8:22-73
+uses-permission#android.permission.INTERNET
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:9:22-64
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:10:5-68
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:10:22-65
+uses-permission#com.google.android.gms.permission.ACTIVITY_RECOGNITION
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:11:5-94
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:11:22-91
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:12:22-78
+uses-permission#android.permission.BLUETOOTH
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:13:5-67
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:13:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:14:5-73
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:14:22-71
+uses-feature#android.hardware.location.gps
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:15:5-66
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:15:19-63
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:16:5-76
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:16:22-74
+application
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:18:5-117:19
+	android:icon
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:18:18-52
+meta-data#com.drivequant.sdk.API_KEY
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:27:9-29:56
+	android:value
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:29:13-53
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:28:13-54
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:31:9-86
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:31:19-83
+service#com.drivequant.sdk.tripanalysis.service.GPSRecorderService
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:33:9-35:40
+	android:exported
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:34:13-86
+service#com.drivequant.sdk.tripanalysis.service.RecorderManager
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:37:9-39:40
+	android:exported
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:39:13-37
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:38:13-83
+service#com.drivequant.sdk.tripanalysis.service.PostRequestService
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:41:9-48:19
+	android:exported
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:43:13-37
+	android:permission
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:44:13-93
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:42:13-86
+intent-filter#action:name:com.google.android.gms.gcm.ACTION_TASK_READY
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:45:13-47:29
+action#com.google.android.gms.gcm.ACTION_TASK_READY
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:46:17-87
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:46:25-84
+service#com.portify.sdk.PortifyBackgroundService
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:50:9-56:19
+	android:exported
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:52:13-37
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:51:13-68
+intent-filter#action:name:com.portify.sdk.FOREGROUND
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:53:13-55:29
+action#com.portify.sdk.FOREGROUND
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:54:17-69
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:54:25-66
+receiver#com.portify.sdk.DriveQuantReceiver
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:59:9-65:20
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:59:19-68
+intent-filter#action:name:android.intent.action.ACTION_POWER_CONNECTED+action:name:android.intent.action.ACTION_POWER_DISCONNECTED+action:name:android.intent.action.BOOT_COMPLETED
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:60:13-64:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:61:17-79
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:61:25-76
+action#android.intent.action.ACTION_POWER_CONNECTED
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:62:17-87
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:62:25-84
+action#android.intent.action.ACTION_POWER_DISCONNECTED
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:63:17-90
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:63:25-87
+receiver#com.portify.sdk.StartServiceOnReboot
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:67:9-71:20
+	android:enabled
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:67:56-78
+	android:name
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:67:19-55
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml:68:13-70:29
+uses-sdk
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+		ADDED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml
+		INJECTED from /Users/alexholub/dev/parkopoly/node_modules/react-native-portify-drivequant-wrapper/android/src/main/AndroidManifest.xml

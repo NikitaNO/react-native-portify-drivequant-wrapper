@@ -1,0 +1,118 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.portify.sdk">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+
+    <application android:icon="@mipmap/ic_launcher">
+
+        <!-- Test key (pointing to connected vehicle in test)
+        <meta-data
+            android:name="com.drivequant.sdk.API_KEY"
+            android:value="ZJRsIISWn5Yk3uYHCK5VODtG" />
+        -->
+
+        <!-- pointing to https://connectedvehicle.fleetintelligence.se/api/DriveQuant -->
+        <meta-data
+            android:name="com.drivequant.sdk.API_KEY"
+            android:value="1vyCyVnEsLzepRgEH0NQPwG3" />
+
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+
+        <service
+            android:name="com.drivequant.sdk.tripanalysis.service.GPSRecorderService"
+            android:exported="false" />
+
+        <service
+            android:name="com.drivequant.sdk.tripanalysis.service.RecorderManager"
+            android:exported="false" />
+
+        <service
+            android:name="com.drivequant.sdk.tripanalysis.service.PostRequestService"
+            android:exported="false"
+            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name="com.portify.sdk.PortifyBackgroundService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.portify.sdk.FOREGROUND" />
+            </intent-filter>
+        </service>
+
+
+        <receiver android:name="com.portify.sdk.DriveQuantReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".StartServiceOnReboot" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!--<receiver android:name=".BluetoothStateChangeReceiver" android:enabled="true">
+            <intent-filter>
+                <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
+            </intent-filter>
+        </receiver>-->
+
+        <!--
+        Sätts i kod
+        <receiver android:name="com.portify.sdk.TripAnalysedReceiver">
+            <intent-filter>
+                <action android:name="com.drivequant.sdk.TRIP_ANALYSED" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.drivequant.sdk.tripanalysis.service.GPSRecorderService"
+            android:exported="false" />
+
+        <service
+            android:name="com.drivequant.sdk.tripanalysis.service.RecorderManager"
+            android:exported="false" />
+
+        <service
+            android:name="com.drivequant.sdk.tripanalysis.service.PostRequestService"
+            android:exported="false"
+            android:permission="com.google.android.gms.permission.BIND_NETWORK_TASK_SERVICE">
+            <intent-filter>
+                <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.drivequant.sdk.tripanalysis.receivers.DriveQuantReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".TripAnalysedReceiver">
+            <intent-filter>
+                <action android:name="com.drivequant.sdk.TRIP_ANALYSED" />
+            </intent-filter>
+        </receiver>-->
+    </application>
+</manifest>

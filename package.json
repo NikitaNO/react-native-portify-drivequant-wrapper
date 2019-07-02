@@ -1,0 +1,21 @@
+{
+  "name": "react-native-portify-drivequant-wrapper",
+  "version": "1.0.184",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "",
+  "license": "",
+  "peerDependencies": {
+    "react": "16.3.1",
+    "react-native": "^0.56.0"
+  },
+  "devDependencies": {
+    "babel-preset-react-native": "^5.0.2"
+  }
+}
