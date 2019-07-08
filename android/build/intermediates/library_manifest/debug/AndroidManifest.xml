@@ -25,19 +25,14 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application android:icon="@mipmap/ic_launcher" >
-
-        <!--
-        Test key (pointing to connected vehicle in test)
         <meta-data
             android:name="com.drivequant.sdk.API_KEY"
-            android:value="ZJRsIISWn5Yk3uYHCK5VODtG" />
-        -->
-
+            android:value="zCAKGsyaccoBajspVYlOwC8g" />
 
         <!-- pointing to https://connectedvehicle.fleetintelligence.se/api/DriveQuant -->
-        <meta-data
-            android:name="com.drivequant.sdk.API_KEY"
-            android:value="1vyCyVnEsLzepRgEH0NQPwG3" />
+        <!-- <meta-data -->
+        <!-- android:name="com.drivequant.sdk.API_KEY" -->
+        <!-- android:value="1vyCyVnEsLzepRgEH0NQPwG3" /> -->
 
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
 

@@ -2,7 +2,6 @@ package com.portify.sdk;
 
 import android.app.Application;
 import android.bluetooth.BluetoothAdapter;
-import android.content.Context;
 import android.util.Log;
 
 import com.drivequant.sdk.model.EfficiencyData;
@@ -83,24 +82,6 @@ public class DriveQuantSdkRunner {
             Log.i(Constants.LOG_CAT, "TripAnalysisListener was unbound.");
         } catch(SDKNotInitializedException sde) {
             Log.e(Constants.LOG_CAT, "TripAnalysisListener could not be unbound. SDKNotInitialized. " + sde.getMessage());
-        }
-    }
-
-    public void startTrip(String userId, Vehicle vehicle, Context context, boolean startForeground, TripNotification foregroundTripNotification)  {
-        try{
-            DriveQuantTripAnalysis.startTrip(userId, vehicle, context, startForeground, foregroundTripNotification);
-            Log.i(Constants.LOG_CAT, "Trip was started.");
-        } catch(SDKNotInitializedException sde) {
-            Log.e(Constants.LOG_CAT, "startTrip could not be unbound. SDKNotInitialized. " + sde.getMessage());
-        }
-    }
-
-    public void stopTrip(Context context)  {
-        try{
-            DriveQuantTripAnalysis.stopTrip(context);
-            Log.i(Constants.LOG_CAT, "Trip was started.");
-        } catch(SDKNotInitializedException sde) {
-            Log.e(Constants.LOG_CAT, "startTrip could not be unbound. SDKNotInitialized. " + sde.getMessage());
         }
     }
 

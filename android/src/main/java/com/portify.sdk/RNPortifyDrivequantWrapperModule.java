@@ -21,6 +21,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.LifecycleEventListener;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableNativeMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.soloader.SoLoader;
@@ -122,17 +123,53 @@ public class RNPortifyDrivequantWrapperModule extends ReactContextBaseJavaModule
     }
 
     @ReactMethod
-    public void startTrip(String userId, Vehicle vehicle, Context context, boolean startForeground, TripNotification foregroundTripNotification) {
+    public void startTrip(String userId, ReadableMap userVehicle, ReadableMap userNotification, boolean startForeground) {
         try{
-            DriveQuantTripAnalysis.startTrip(userId, vehicle, context, startForeground, foregroundTripNotification);
+            Vehicle vehicle = createVehicle(userVehicle);
+            TripNotification notification = createForegroundNotification(userNotification);
+
+            DriveQuantTripAnalysis.startTrip(userId, vehicle, context, startForeground, notification);
             Log.i(Constants.LOG_CAT, "Trip was started.");
         } catch(SDKNotInitializedException sde) {
             Log.e(Constants.LOG_CAT, "startTrip could not be unbound. SDKNotInitialized. " + sde.getMessage());
         }
     }
 
+    private TripNotification createForegroundNotification(ReadableMap userNotification) {
+        String content = userNotification.getString("content");
+        String cancel = userNotification.getString("cancel");
+        int iconId = userNotification.getInt("iconId");
+        int cancelIconId = userNotification.getInt("cancelIconId");
+        int noGpsIconId = userNotification.getInt("noGpsIconId");
+        boolean enableCancel = userNotification.getBoolean("enableCancel");
+        String gpsAccuracyButtonContent = userNotification.getString("gpsAccuracyButtonContent");
+        String gpsAccuracyContent = userNotification.getString("gpsAccuracyContent");
+
+        TripNotification tripNotification = new TripNotification(context.getString(R.string.app_name), content, cancel, iconId, cancelIconId, enableCancel);
+        tripNotification.setNoGpsIconId(noGpsIconId);
+        tripNotification.setGpsAccuracyContent(gpsAccuracyContent);
+        tripNotification.setGpsAccuracyButtonContent(gpsAccuracyButtonContent);
+        tripNotification.setEnableCancel(enableCancel);
+
+        return tripNotification;
+    }
+
+    private Vehicle createVehicle(ReadableMap userVehicle) {
+        Vehicle vehicle = new Vehicle();
+        vehicle.setCarConsumption(userVehicle.getInt("carConsumption"));
+        vehicle.setCarEngineIndex(userVehicle.getInt("carEngineIndex"));
+        vehicle.setCarGearboxIndex(userVehicle.getInt("carGearboxIndex"));
+        vehicle.setCarMass(userVehicle.getInt("carMass"));
+        vehicle.setCarPower(userVehicle.getInt("carPower"));
+        vehicle.setCarTypeIndex(userVehicle.getInt("carTypeIndex"));
+        vehicle.setCarPassengers(userVehicle.getInt("carPassengers"));
+
+        return vehicle;
+    }
+
+
     @ReactMethod
-    public void stopTrip(Context context) {
+    public void stopTrip() {
         try{
             DriveQuantTripAnalysis.stopTrip(context);
             Log.i(Constants.LOG_CAT, "Trip was started.");
