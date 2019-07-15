@@ -123,15 +123,17 @@ public class RNPortifyDrivequantWrapperModule extends ReactContextBaseJavaModule
     }
 
     @ReactMethod
-    public void startTrip(String userId, ReadableMap userVehicle, ReadableMap userNotification, boolean startForeground) {
+    public void startTrip(String userId, ReadableMap userVehicle, ReadableMap userNotification, boolean startForeground, final Promise promise) {
         try{
             Vehicle vehicle = createVehicle(userVehicle);
             TripNotification notification = createForegroundNotification(userNotification);
 
             DriveQuantTripAnalysis.startTrip(userId, vehicle, context, startForeground, notification);
             Log.i(Constants.LOG_CAT, "Trip was started.");
+            promise.resolve(true);
         } catch(SDKNotInitializedException sde) {
             Log.e(Constants.LOG_CAT, "startTrip could not be unbound. SDKNotInitialized. " + sde.getMessage());
+            promise.resolve(false);
         }
     }
 
@@ -162,19 +164,20 @@ public class RNPortifyDrivequantWrapperModule extends ReactContextBaseJavaModule
         vehicle.setCarMass(userVehicle.getInt("carMass"));
         vehicle.setCarPower(userVehicle.getInt("carPower"));
         vehicle.setCarTypeIndex(userVehicle.getInt("carTypeIndex"));
-        vehicle.setCarPassengers(userVehicle.getInt("carPassengers"));
 
         return vehicle;
     }
 
 
     @ReactMethod
-    public void stopTrip() {
+    public void stopTrip(final Promise promise) {
         try{
             DriveQuantTripAnalysis.stopTrip(context);
-            Log.i(Constants.LOG_CAT, "Trip was started.");
+            Log.i(Constants.LOG_CAT, "Trip was stopped.");
+            promise.resolve(true);
         } catch(SDKNotInitializedException sde) {
-            Log.e(Constants.LOG_CAT, "startTrip could not be unbound. SDKNotInitialized. " + sde.getMessage());
+            Log.e(Constants.LOG_CAT, "stopTrip error. " + sde.getMessage());
+            promise.resolve(false);
         }
     }
 
