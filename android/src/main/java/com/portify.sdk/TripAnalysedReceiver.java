@@ -39,7 +39,7 @@ public class TripAnalysedReceiver extends com.drivequant.sdk.tripanalysis.receiv
     private WritableNativeMap getParams(String trip, String error, Boolean isFinished) {
         WritableNativeMap params = new WritableNativeMap();
 
-        params.putString("trip", trip);
+        params.putString("itinId", trip);
         params.putString("error", error);
         params.putBoolean("isFinished", isFinished);
 
