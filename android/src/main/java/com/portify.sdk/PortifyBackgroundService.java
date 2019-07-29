@@ -1,7 +1,6 @@
 package com.portify.sdk;
 import android.app.NotificationManager;
 import android.app.Service;
-import android.bluetooth.BluetoothAdapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -63,42 +62,48 @@ public class PortifyBackgroundService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        NotificationHelper.createNotificationChannelIfNeeded((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE));
+        try {
+            NotificationHelper.createNotificationChannelIfNeeded((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE));
 
-        if(intent.getAction().equals(Constants.START_FOREGROUND_ACTION)) {
-            // If we are running "pre-Oreo" we start the service here..
-            if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) {
-                Log.i(Constants.LOG_CAT, "Pre-Oreo, starting service early..");
-                int NOTIFICATION_ID = 12345689;
-                startForeground(NOTIFICATION_ID, NotificationHelper.getCompatNotification(getApplication(), getApplicationContext()));
+            if(intent.getAction().equals(Constants.START_FOREGROUND_ACTION)) {
+                // If we are running "pre-Oreo" we start the service here..
+                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.O) {
+                    Log.i(Constants.LOG_CAT, "Pre-Oreo, starting service early..");
+                    int NOTIFICATION_ID = 12345689;
+                    startForeground(NOTIFICATION_ID, NotificationHelper.getCompatNotification(getApplication(), getApplicationContext()));
+                }
+
+                Log.i(Constants.LOG_CAT, "PortifyBackgroundService onStartCommand with intent START_FOREGROUND_ACTION");
+                String user = intent.getStringExtra("user");
+                ArrayList<String> beaconStrings = intent.getStringArrayListExtra("beacons");
+
+                ArrayList<Beacon> beacons = new ArrayList<>();
+                for(String beaconString : beaconStrings) {
+                    String[] parts = beaconString.split(":");
+                    Beacon beacon = new Beacon();
+                    beacon.setProximityUuid(parts[0]);
+                    beacon.setMajor(Integer.parseInt(parts[1]));
+                    beacon.setMinor(Integer.parseInt(parts[2]));
+                    beacons.add(beacon);
+                }
+
+                driveQuantSdkRunner.SetUser(user);
+                driveQuantSdkRunner.AddBeacon(beacons);
+                driveQuantSdkRunner.InitiateSdk();
             }
 
-            Log.i(Constants.LOG_CAT, "PortifyBackgroundService onStartCommand with intent START_FOREGROUND_ACTION");
-            String user = intent.getStringExtra("user");
-            ArrayList<String> beaconStrings = intent.getStringArrayListExtra("beacons");
-
-            ArrayList<Beacon> beacons = new ArrayList<>();
-            for(String beaconString : beaconStrings) {
-                String[] parts = beaconString.split(":");
-                Beacon beacon = new Beacon();
-                beacon.setProximityUuid(parts[0]);
-                beacon.setMajor(Integer.parseInt(parts[1]));
-                beacon.setMinor(Integer.parseInt(parts[2]));
-                beacons.add(beacon);
+            if(intent.getAction().equals(Constants.STOP_FOREGROUND_ACTION)) {
+                Log.i(Constants.LOG_CAT, "PortifyBackgroundService onStartCommand with intent STOP_FOREGROUND_ACTION");
+                if (driveQuantSdkRunner != null) {
+                    driveQuantSdkRunner.destroySdkRunner();
+                    Log.i(Constants.LOG_CAT, "SDK runner destroyed.");
+                    driveQuantSdkRunner = null;
+                }
+                stopForeground(true);
+                stopSelf();
             }
-
-            driveQuantSdkRunner.SetUser(user);
-            driveQuantSdkRunner.AddBeacon(beacons);
-            driveQuantSdkRunner.InitiateSdk();
-        }
-
-        if(intent.getAction().equals(Constants.STOP_FOREGROUND_ACTION)) {
-            Log.i(Constants.LOG_CAT, "PortifyBackgroundService onStartCommand with intent STOP_FOREGROUND_ACTION");
-            if (driveQuantSdkRunner != null) {
-                driveQuantSdkRunner.destroySdkRunner();
-                Log.i(Constants.LOG_CAT, "SDK runner destroyed.");
-                driveQuantSdkRunner = null;
-            }
+        } catch (Exception e) {
+            Log.e(Constants.LOG_CAT, "BACKGROUND SERVICE onStartCommand EXCEPTION " + e.getMessage());
             stopForeground(true);
             stopSelf();
         }
