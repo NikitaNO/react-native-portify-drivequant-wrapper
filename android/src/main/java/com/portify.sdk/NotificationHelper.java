@@ -37,11 +37,11 @@ public class NotificationHelper {
 
         builder
                 .setSmallIcon(iconId)
-                .setContentTitle("FIP Drive")
-                .setContentText("Lyssnar efter resor..")
+                .setContentTitle("DriveQuant")
+                .setContentText("Pour des mesures de sécurité votre position est suivie au cours de votre mission")
                 .setLargeIcon(BitmapFactory.decodeResource(application.getResources(), iconId))
                 .setSound(null)
-                .setTicker("Lyssnar efter resor..")
+                .setTicker("Pour des mesures de sécurité votre position est suivie au cours de votre mission")
                 .setWhen(System.currentTimeMillis());
 
         Intent startIntent = new Intent(context, DriveQuantSdkRunner.class);
